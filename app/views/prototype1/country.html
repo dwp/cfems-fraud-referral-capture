@@ -4,11 +4,10 @@
   What country are they claiming benefits in? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {% include "includes/back-link.html" %}
+  {% include "includes/language-toggle.html" %}
 {% endblock %}
 
 {% block content %}
