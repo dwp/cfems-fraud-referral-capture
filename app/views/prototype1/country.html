@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What country are they claiming benefits in? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="country" method="post">
+
+      {{ govukRadios({
+        name: "country-check",
+        fieldset: {
+          legend: {
+            text: "What country are they claiming benefits in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "England"
+          },
+          {
+            value: "scotland",
+            text: "Scotland"
+          },
+          {
+            value: "wales",
+            text: "Wales"
+          },
+          {
+            value: "northern-ireland",
+            text: "Northern Ireland"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "abroad",
+            text: "They live in a different country but claim benefits over here"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
