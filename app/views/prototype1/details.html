@@ -142,461 +142,109 @@
 
 
 
+<!-- GDS components for other names -->
+
+{% set nicknameHtml %}
+  {{ govukCharacterCount({
+    name: "withHint",
+    id: "with-hint",
+    maxlength: 250,
+    label: {
+      text: "Other names",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    }
+  }) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "nickname",
+  fieldset: {
+    legend: {
+      text: "Do you know them by another name? (optional)"    }
+  },
+  hint: {
+    text: "For example nickname, professional name or maiden name"
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: nicknameHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+<!-- End of GDS components for other names -->
+
+
+<!-- GDS components for Age -->
+{% set dobHtml %}
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "Date of Birth"
+      }
+    },
+    hint: {
+      text: "For example, 27 3 2024"
+    }
+  }) }}
+{% endset -%}
+
+{% set approxHtml %}
+  {{ govukInput({
+    label: {
+      text: "Approximate age in years"
+    },
+    id: "event-name",
+    classes: "govuk-input--width-4",
+    name: "eventName"
+  }) }}
+{% endset -%}
+
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "dob",
+  fieldset: {
+    legend: {
+      text: "Do you know their date of birth? (optional)"    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: dobHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      conditional: {
+        html: approxHtml
+      }
+    }
+  ]
+}) }}
+
+<!-- End of GDS components for Age -->
 
 
-
-
-
-  
-  
-
-  
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset" aria-describedby="f-otherNameOptions-hint">
-    
-    <legend class="govuk-fieldset__legend govuk-label--m">
-    
-      Do you know them by another name? (optional)
-    
-    </legend>
-    
-  
-    <div id="f-otherNameOptions-hint" class="govuk-hint">
-      For example nickname, professional name or maiden name
-    </div>
-  
-  
-    <div class="govuk-radios govuk-radios--inline"
-      
-     data-module="govuk-radios">
-      
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-otherNameOptions" name="otherNameOptions" type="radio" value="Yes"
-      
-          
-        
-      
-     data-target="otherNameDiv">
-        <label class="govuk-label govuk-radios__label" for="f-otherNameOptions">
-          Yes
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-otherNameOptions-2" name="otherNameOptions" type="radio" value="No"
-      
-          
-        
-      
-     data-target="otherNameNo">
-        <label class="govuk-label govuk-radios__label" for="f-otherNameOptions-2">
-          No
-        </label>
-        
-      </div>
-      
-    
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
-
-
-
-<div class="panel panel-border-narrow js-hidden" id="otherNameDiv">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="govuk-form-group govuk-character-count"
-    
-        
-      
-    
-        
-      
-    
-    
-    
-   data-module="govuk-character-count" data-maxlength="250" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
-   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
-  >
-  <label class="govuk-label govuk-label--s" for="f-otherNames">
-    Other names
-  </label>
-
-
-
-  <textarea class="govuk-textarea govuk-js-character-count govuk-input--width-30" id="f-otherNames" name="otherNames" rows="5" aria-describedby="f-otherNames-info"
-    
-  ></textarea>
-
-  <div id="f-otherNames-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 250 characters
-  </div>
-
-</div>
-
-
-</div>
-<div class="panel panel-border-narrow js-hidden" id="otherNameNo"></div>-->
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-    
-    <legend class="govuk-fieldset__legend govuk-label--m">
-    
-      Do you know their date of birth? (optional)
-    
-    </legend>
-    
-  
-    <div class="govuk-radios govuk-radios--inline"
-      
-     data-module="govuk-radios">
-      
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-dobOptions" name="dobOptions" type="radio" value="Yes"
-      
-          
-        
-      
-     data-target="dateOfBirth">
-        <label class="govuk-label govuk-radios__label" for="f-dobOptions">
-          Yes
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-dobOptions-2" name="dobOptions" type="radio" value="No"
-      
-          
-        
-      
-     data-target="approximateAge">
-        <label class="govuk-label govuk-radios__label" for="f-dobOptions-2">
-          No
-        </label>
-        
-      </div>
-      
-    
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
-
-<!--<div class="panel panel-border-narrow js-hidden" id="dateOfBirth">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="f-dateOfBirth-hint">
-    
-    <legend class="govuk-fieldset__legend govuk-label--s">
-    
-      Date of Birth
-    
-    </legend>
-    
-  
-    <div id="f-dateOfBirth-hint" class="govuk-hint">
-      For example, 27 3 2004
-    </div>
-  
-  
-    <div class="govuk-date-input"
-      
-     id="f-dateOfBirth">
-      
-      
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="f-dateOfBirth[dd]">
-            Day
-          </label>
-        
-        
-          <input
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-            
-            
-            
-            
-            
-            
-            
-                
-              
-            
-           class="govuk-input govuk-date-input__input govuk-input--width-2 
-          
-        " id="f-dateOfBirth[dd]" name="dateOfBirth[dd]" type="text" inputmode="numeric">
-        
-        </div>
-      </div>
-      
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="f-dateOfBirth[mm]">
-            Month
-          </label>
-        
-        
-          <input
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-            
-            
-            
-            
-            
-            
-            
-                
-              
-            
-           class="govuk-input govuk-date-input__input govuk-input--width-2 
-          
-        " id="f-dateOfBirth[mm]" name="dateOfBirth[mm]" type="text" inputmode="numeric">
-        
-        </div>
-      </div>
-      
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="f-dateOfBirth[yyyy]">
-            Year
-          </label>
-        
-        
-          <input
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-                
-              
-            
-            
-            
-            
-            
-            
-            
-            
-                
-              
-            
-           class="govuk-input govuk-date-input__input govuk-input--width-4 
-          
-        " id="f-dateOfBirth[yyyy]" name="dateOfBirth[yyyy]" type="text" inputmode="numeric">
-        
-        </div>
-      </div>
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
-
-</div>
-<div class="panel panel-border-narrow js-hidden" id="approximateAge">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="f-approximateAge">
-    Approximate age in years
-  </label>
-
-
-  <input
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-    
-    
-    
-    
-    
-    
-        
-      
-    
-        
-      
-    
-   class="govuk-input govuk-input--width-5" id="f-approximateAge" name="approximateAge" type="text" pattern="[0-9]*" inputmode="numeric"
-    
-  >
-
-</div>
-
-
-</div>-->
 
 
  <fieldset class="govuk-fieldset">
