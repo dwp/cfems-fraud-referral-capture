@@ -436,7 +436,48 @@
   
 
 
+{% set vehicleHtml %}
+  {{ govukCharacterCount({
+    name: "withHint",
+    id: "with-hint",
+    maxlength: 250,
+    label: {
+      text: "Vehicle details"
+    },
+    hint: {
+      text: "Make and model, colour and registration number if known"
+    }
+  }) }}
+{% endset -%}
 
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "dob",
+  fieldset: {
+    legend: {
+      text: "Do they travel to work in a vehicle?"    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: vehicleHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      conditional: {
+        html: approxHtml
+      }
+    }
+  ]
+}) }}
 
 
 
@@ -448,127 +489,6 @@
 
 
 
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-    
-    <legend class="govuk-fieldset__legend govuk-label--m">
-    
-      Do they travel to work in a vehicle?
-    
-    </legend>
-    
-  
-    <div class="govuk-radios govuk-radios--inline"
-      
-     data-module="govuk-radios">
-      
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-vehicleOptions" name="vehicleOptions" type="radio" value="Yes"
-      
-          
-        
-      
-     data-target="vehicleDetailsDiv">
-        <label class="govuk-label govuk-radios__label" for="f-vehicleOptions">
-          Yes
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-vehicleOptions-2" name="vehicleOptions" type="radio" value="No"
-      
-          
-        
-      
-     data-target="vehicleDetailsHide">
-        <label class="govuk-label govuk-radios__label" for="f-vehicleOptions-2">
-          No
-        </label>
-        
-      </div>
-      
-    
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
-
-
-
-<div class="panel panel-border-narrow js-hidden" id="vehicleDetailsDiv">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="govuk-form-group govuk-character-count"
-    
-        
-      
-    
-        
-      
-    
-    
-    
-   data-module="govuk-character-count" data-maxlength="250" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
-   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
-  >
-  <label class="govuk-label govuk-label--s" for="f-vehicleDetails">
-    Vehicle details
-  </label>
-
-  
-  
-  <div id="f-vehicleDetails-hint" class="govuk-hint">
-    Make and model, colour and registration number if known
-  </div>
-
-
-
-  <textarea class="govuk-textarea govuk-js-character-count govuk-input--width-30" id="f-vehicleDetails" name="vehicleDetails" rows="5" aria-describedby="f-vehicleDetails-info f-vehicleDetails-hint"
-    
-  ></textarea>
-
-  <div id="f-vehicleDetails-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 250 characters
-  </div>
-
-</div>
-
-
-</div>
-<div class="panel panel-border-narrow js-hidden" id="vehicleDetailsHide"></div>-->
-
-  
 
 
 
