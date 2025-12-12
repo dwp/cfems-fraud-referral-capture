@@ -14,6 +14,179 @@
 
     
     <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+      <!-- Start of prototype 2 accordion-->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Second prototype
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+          <dl>
+              <dt class="govuk-heading-s">Date created</dt>
+              <dt class="govuk-body">November 2025</dt>
+              {{govukTag({
+                text: "In progress",
+                classes: "govuk-tag--blue"
+              })}}
+            </dl>
+            <dl>
+              <dt class="govuk-heading-s"><a href="https://lucid.app/lucidspark/2a781330-b819-411c-a533-5e884fc8ece6/edit?viewport_loc=20361%2C-4360%2C8905%2C4592%2C0_0&invitationId=inv_1af8c4f1-c58a-4e5a-9811-a443a1375b3f">Lucid board</a></dt>
+            </dl>
+            <dl>
+              <dt class="govuk-heading-s">What it is</dt>
+              <dt class="govuk-body">Second protoype for revisions and improvements to the existing <a href="https://www.gov.uk/report-benefit-fraud">Fraud Referral Capture form</a>. This second prototype consists of further iteration on the knockout questions/guidance content at the start and end of the journey based on the findings from the round research that occurred in October and November 2025.</p> <p>This second version of the prototye also now recreates the dynamic pages of the existing FRC form and presents users with specific pages/content based upon the fraud type they choose to report on. Some updates are made to the existing FRC form pages but not a full redesign.</dt>
+            </dl>
+           <!-- <dl>
+              <dt class="govuk-heading-s">Hypotheses to test</dt>
+              <dt class="govuk-body">Because many FRC Referrals are duplicates, and some relate to fraud types handled by other government departments and agencies, or by authorities in Scotland and Northern Ireland, we believe that providing clearer guidance and redirection at the start of the referral journey will help discourage users from submitting repeat referrals. We will know this is effective when we see a reduction in the number of duplicate referrals received by RMS.</dt>
+            </dl>-->
+
+            <a href="prototype2/start" class="govuk-button govuk-button--start">Start prototype</a>
+
+            <table class="govuk-table govuk-!-margin-bottom-9">
+              <caption class="govuk-table__caption govuk-table__caption--m">Page list</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Link</th>
+                  <th scope="col" class="govuk-table__header">Error page</th>
+                  <th scope="col" class="govuk-table__header">Notes</th>
+                  <th scope="col" class="govuk-table__header">Confidence</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/start" class="govuk-link govuk-link--no-visited-state">Start page</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New start page content, tested well in research.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/staying-safe" class="govuk-link govuk-link--no-visited-state">Staying safe</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New page, safeguarding content moved from start page to 'interstitial' page. Tested well in research.</td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/country" class="govuk-link govuk-link--no-visited-state">What country are they claiming benefits in?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, all participants understood the page.</td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/scotland" class="govuk-link govuk-link--no-visited-state">Report benefit fraud in Scotland</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New guidance page, participants struggled with this page, they were confused about where to go next.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/reported-before" class="govuk-link govuk-link--no-visited-state">Have you reported them to us before?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, all participants understood the page.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/new-information" class="govuk-link govuk-link--no-visited-state">Do you have any new information?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, users unsure what would be classed as new information, too vague.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Medium",
+                      classes: "govuk-tag--yellow"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/dropout" class="govuk-link govuk-link--no-visited-state">There's no need to report them again</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New guidance/dropout page. Users understood the page but it did not deter them from submitting multiple reports.</td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/details" class="govuk-link govuk-link--no-visited-state">The person you want to report</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/fraud-type" class="govuk-link govuk-link--no-visited-state">What type of fraud do you want to report?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/working-and-claiming-benefits" class="govuk-link govuk-link--no-visited-state">The person you're reporting - their work</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form based on selecting 'working and claiming benefits' on previous page checkboxes</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/additional-information" class="govuk-link govuk-link--no-visited-state">Additional information</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/check-your-answers" class="govuk-link govuk-link--no-visited-state">Check your answers</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New page added based on UR findings</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/confirmation" class="govuk-link govuk-link--no-visited-state">Report submitted confirmation</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Revised content added to page from existing FRC form. Users understood the purpose of the page but they were left in the dark, they expected reference numbers, timelines of investigations etc.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
+                </tr>
+  
+              </tbody>
+            </table>
+
+        </div>
+      </div>
+      <!-- End of prototype 2 accordion-->
+
+
+
+      <!-- Start of prototype 1 accordion-->
       <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header">
           <h2 class="govuk-accordion__section-heading">
@@ -27,8 +200,8 @@
               <dt class="govuk-heading-s">Date created</dt>
               <dt class="govuk-body">October 2025</dt>
               {{govukTag({
-                text: "Ready for UR",
-                classes: "govuk-tag--orange"
+                text: "Tested",
+                classes: "govuk-tag--green"
               })}}
             </dl>
             <dl>
@@ -59,80 +232,145 @@
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/start" class="govuk-link govuk-link--no-visited-state">Start page</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New start page content</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New start page content, tested well in research, UCD happy to send to GOV UK content team.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/staying-safe" class="govuk-link govuk-link--no-visited-state">Staying safe</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New page, safeguarding content moved from start page to 'interstitial' page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New page, safeguarding content moved from start page to 'interstitial' page. Tested well in research.</td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/country" class="govuk-link govuk-link--no-visited-state">What country are they claiming benefits in?</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New knockout question page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, all participants understood the page.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/scotland" class="govuk-link govuk-link--no-visited-state">Report benefit fraud in Scotland</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New guidance page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New guidance page, participants struggled with this page, they were confused about where to go next.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/reported-before" class="govuk-link govuk-link--no-visited-state">Have you reported them to us before?</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New knockout question page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, all participants understood the page.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "High",
+                      classes: "govuk-tag--green"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/new-information" class="govuk-link govuk-link--no-visited-state">Do you have any new information?</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New knockout question page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New knockout question page, users unsure what would be classed as new information, too vague.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Medium",
+                      classes: "govuk-tag--yellow"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/dropout" class="govuk-link govuk-link--no-visited-state">There's no need to report them again</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New guidance/dropout page</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New guidance/dropout page. Users understood the page but it did not deter from submitting multiple reports.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/details" class="govuk-link govuk-link--no-visited-state">The person you want to report</a></td>
                   <td class="govuk-table__cell"> </td>
                   <td class="govuk-table__cell">Page lifted from existing FRC form</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "N/A",
+                      classes: "govuk-tag--grey"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/fraud-type" class="govuk-link govuk-link--no-visited-state">What type of fraud do you want to report?</a></td>
                   <td class="govuk-table__cell"> </td>
                   <td class="govuk-table__cell">Page lifted from existing FRC form</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "N/A",
+                      classes: "govuk-tag--grey"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/working-and-claiming-benefits" class="govuk-link govuk-link--no-visited-state">The person you're reporting - their work</a></td>
                   <td class="govuk-table__cell"> </td>
                   <td class="govuk-table__cell">Page lifted from existing FRC form based on selecting 'working and claiming benefits' on previous page checkboxes</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "N/A",
+                      classes: "govuk-tag--grey"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/additional-information" class="govuk-link govuk-link--no-visited-state">Additional information</a></td>
                   <td class="govuk-table__cell"> </td>
                   <td class="govuk-table__cell">Page lifted from existing FRC form</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell"> 
+                    {{govukTag({
+                      text: "N/A",
+                      classes: "govuk-tag--grey"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/review" class="govuk-link govuk-link--no-visited-state">Review and send your report</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. Users expected to be able to review and edit the information they had entered on this page. One user commented it looks broken.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype1/confirmation" class="govuk-link govuk-link--no-visited-state">Report submitted confirmation</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Revised content added to page from existing FRC form </td>
-                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Revised content added to page from existing FRC form. Users understood the purpose of the page but they were left in the dark, they expected reference numbers, timelines of investigations etc.</td>
+                  <td class="govuk-table__cell">
+                    {{govukTag({
+                      text: "Low",
+                      classes: "govuk-tag--red"
+                    })}}
+                  </td>
                 </tr>
   
               </tbody>
@@ -140,6 +378,7 @@
 
         </div>
       </div>
+      <!-- End of prototype 1 accordion -->
     
     </div>
 
