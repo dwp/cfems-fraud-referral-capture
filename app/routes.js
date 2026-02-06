@@ -64,3 +64,11 @@ router.post('/prototype2/new-information', (req, res) => {
     }   
 });
 
+// Prototype 2 - Address branch
+router.post('/prototype2/address-known', (req, res) => {
+        if(req.session.data['address-known'] == 'Yes'){
+    res.redirect('address-search')
+        } else {
+    res.redirect('fraud-type')
+    }   
+});

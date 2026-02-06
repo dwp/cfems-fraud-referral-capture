@@ -1,0 +1,101 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on [name of service]",
+  messages: [
+    {
+      headingText: "Cookies on [name of service]",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button"
+        },
+        {
+          text: "View cookies",
+          href: "#"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% block header %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on Report benefit fraud",
+  messages: [
+    {
+      headingText: "Cookies on Report benefit fraud",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button"
+        },
+        {
+          text: "View cookies",
+          href: "#"
+        }
+      ]
+    }
+  ]
+}) }}
+
+
+
+    {{ govukHeader() }}
+    {{ govukServiceNavigation({
+        serviceName: serviceName,
+        serviceUrl: "start"
+    })}}
+
+{% endblock %}
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/accessibility-statement",
+          text: "Accessibility statement"
+        },
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

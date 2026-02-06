@@ -67,7 +67,7 @@
 
 
 
-  <textarea class="govuk-textarea govuk-js-character-count govuk-input--width-30" id="f-workType" name="workType" rows="5" aria-describedby="f-workType-info"
+  <textarea class="govuk-textarea govuk-js-character-count" id="f-workType" name="workType" rows="5" aria-describedby="f-workType-info"
     
   ></textarea>
 
@@ -124,7 +124,7 @@
     
     
     
-   class="govuk-input govuk-input--width-20" id="f-employerName" name="employerName" type="text"
+   class="govuk-input" id="f-employerName" name="employerName" type="text"
     
   >
 
@@ -165,7 +165,7 @@
 
 
 
-  <textarea class="govuk-textarea govuk-js-character-count govuk-input--width-30" id="f-employerAddress" name="employerAddress" rows="5" aria-describedby="f-employerAddress-info"
+  <textarea class="govuk-textarea govuk-js-character-count" id="f-employerAddress" name="employerAddress" rows="5" aria-describedby="f-employerAddress-info"
     
   ></textarea>
 
@@ -206,114 +206,41 @@
 
 
 
-
-
-
-  
-
-
-
-
-
-
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-    
-    <legend class="govuk-fieldset__legend govuk-label--m">
-    
-      Approximately how long have they been claiming benefits?
-    
-    </legend>
-    
-  
-    <div class="govuk-radios govuk-radios"
-      
-     data-module="govuk-radios">
-      
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-duration" name="duration" type="radio" value="Less than 3 months">
-        <label class="govuk-label govuk-radios__label" for="f-duration">
-          Less than 3 months
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-duration-2" name="duration" type="radio" value="3 to 6 months">
-        <label class="govuk-label govuk-radios__label" for="f-duration-2">
-          3 to 6 months
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-duration-3" name="duration" type="radio" value="More than 6 months but less than a year">
-        <label class="govuk-label govuk-radios__label" for="f-duration-3">
-          More than 6 months but less than a year
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-duration-4" name="duration" type="radio" value="More than a year">
-        <label class="govuk-label govuk-radios__label" for="f-duration-4">
-          More than a year
-        </label>
-        
-      </div>
-      
-    
-      
-        
-    
-      
-      
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="f-duration-5" name="duration" type="radio" value="I don’t know">
-        <label class="govuk-label govuk-radios__label" for="f-duration-5">
-          I don’t know
-        </label>
-        
-      </div>
-      
-    
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
+{{ govukRadios({
+          name: "benefits-duration",
+          fieldset: {
+            legend: {
+              text: "Approximately how long have they been claiming benefits?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Less than 3 months",
+              text: "Less than 3 months"
+            },
+            {
+              value: "3 to 6 months",
+              text: "3 to 6 months"
+            },
+            {
+              value: "More than 6 months but less than a year",
+              text: "More than 6 months but less than a year"
+            },
+            {
+              value: "More than a year",
+              text: "More than a year"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "I don't know",
+              text: "I don't know"
+            }
+          ]
+        }) }}
 
 
   
@@ -327,44 +254,33 @@
 
 
 
+  
+
+
+
+
+
+
+
+
+{{ govukInput({
+          label: {
+            text: "What time do you think they leave for work? (optional)",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "For example, 9am or 2:30pm - enter 12pm for midday"
+          },
+          classes: "govuk-input--width-5",
+          id: "leave-for-work",
+          name: "leave-for-work"
+        }) }}
+
 
 
 
 
   
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--m" for="f-workStartTime">
-    What time do you think they leave for work? (optional)
-  </label>
-
-
-  <input
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   class="govuk-input govuk-input--width-20" id="f-workStartTime" name="workStartTime" type="text"
-    
-  >
-
-</div>
 
 
 
@@ -413,7 +329,7 @@
     
     
     
-   class="govuk-input govuk-input--width-20" id="f-workDuration" name="workDuration" type="text"
+   class="govuk-input govuk-input--width-5" id="f-workDuration" name="workDuration" type="text"
     
   >
 
@@ -462,7 +378,8 @@
   name: "dob",
   fieldset: {
     legend: {
-      text: "Do they travel to work in a vehicle?"    }
+      text: "Do they travel to work in a vehicle?",
+      classes: "govuk-fieldset__legend--m"      }
   },
   items: [
     {
@@ -534,7 +451,7 @@
 
   <fieldset class="govuk-fieldset">
     
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
     
       What do you think their work status is?
     

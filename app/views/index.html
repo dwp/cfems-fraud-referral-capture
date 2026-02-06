@@ -27,7 +27,7 @@
         <div id="accordion-default-content-1" class="govuk-accordion__section-content">
           <dl>
               <dt class="govuk-heading-s">Date created</dt>
-              <dt class="govuk-body">November 2025</dt>
+              <dt class="govuk-body">February 2026</dt>
               {{govukTag({
                 text: "In progress",
                 classes: "govuk-tag--blue"
@@ -38,7 +38,16 @@
             </dl>
             <dl>
               <dt class="govuk-heading-s">What it is</dt>
-              <dt class="govuk-body">Second protoype for revisions and improvements to the existing <a href="https://www.gov.uk/report-benefit-fraud">Fraud Referral Capture form</a>. This second prototype consists of further iteration on the knockout questions/guidance content at the start and end of the journey based on the findings from the round research that occurred in October and November 2025.</p> <p>This second version of the prototye also now recreates the dynamic pages of the existing FRC form and presents users with specific pages/content based upon the fraud type they choose to report on. Some updates are made to the existing FRC form pages but not a full redesign.</dt>
+              <dt class="govuk-body">
+                <p>Second protoype for revisions and improvements to the existing <a href="https://www.gov.uk/report-benefit-fraud">Fraud Referral Capture form</a>. </p>
+                <p>This second prototype consists of further iterations on the knockout questions/guidance content at the start and end of the journey based on the findings from the round research that occurred in October and November 2025.</p> 
+                <p>This second version of the prototye also now recreates the dynamic pages of the existing FRC form and presents users with specific pages/content based upon the fraud types they choose to report on.</p>
+                <p>The <a href="https://design-system.dwp.gov.uk/patterns/find-an-address" target="_blank">Find an address pattern</a>, used on the FRF form, has been implemented to ensure where possible we have consistent data for addresses across the FRC and the FRF.</p>
+                <p>The existing form does not have a <a href="">check your answers page</a>, research participants commented that they had no ability to check their information and expected to see something like this. This pattern has been added based on the evidence from the UR.</p>
+                <p>The existing live service uses some conditionally revealing components that are not consistent with the GDS Design System, these have been updated to use the correct component.</p>
+                <p>Input labels on the current form are inconsistent, these have been fixed.</p>
+                <p>First name is now a mandatory field</p>
+              </dt>
             </dl>
            <!-- <dl>
               <dt class="govuk-heading-s">Hypotheses to test</dt>
@@ -174,6 +183,22 @@
                       text: "Low",
                       classes: "govuk-tag--red"
                     })}}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/cookies" class="govuk-link govuk-link--no-visited-state">Cookies page</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">New cookies page and example of cookies banner. Currently missing on live service.</td>
+                  <td class="govuk-table__cell">
+
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/accessibility-statement" class="govuk-link govuk-link--no-visited-state">Accessibility statement</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Content lifted from live service. Update required.</td>
+                  <td class="govuk-table__cell">
+
                   </td>
                 </tr>
   

@@ -15,3 +15,31 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })}}
 
 {% endblock %}
+
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/accessibility-statement",
+          text: "Accessibility statement"
+        },
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}
