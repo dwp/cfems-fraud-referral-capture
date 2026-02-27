@@ -9,7 +9,7 @@
 
 
     <h1 class="govuk-heading-xl">
-      Fraud Referral Capture (FRC) prototypes - Testing
+      Fraud Referral Capture (FRC) prototypes
     </h1>
 
     
@@ -46,7 +46,6 @@
                 <p>The existing form does not have a <a href="">check your answers page</a>, research participants commented that they had no ability to check their information and expected to see something like this. This pattern has been added based on the evidence from the UR.</p>
                 <p>The existing live service uses some conditionally revealing components that are not consistent with the GDS Design System, these have been updated to use the correct component.</p>
                 <p>Input labels on the current form are inconsistent, these have been fixed.</p>
-                <p>First name is now a mandatory field</p>
               </dt>
             </dl>
            <!-- <dl>
@@ -103,7 +102,7 @@
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype2/scotland" class="govuk-link govuk-link--no-visited-state">Report benefit fraud in Scotland</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">New guidance page, participants struggled with this page, they were confused about where to go next.</td>
+                  <td class="govuk-table__cell">New guidance page, participants struggled with the first version of this page, they were confused about where to go next. Revised content added to list the benefits issued by the Scottish government.</td>
                   <td class="govuk-table__cell">
                     {{govukTag({
                       text: "Low",
@@ -134,7 +133,7 @@
                   </td>
                 </tr>
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell"><a href="/prototype2/dropout" class="govuk-link govuk-link--no-visited-state">There's no need to report them again</a></td>
+                  <td class="govuk-table__cell"><a href="/prototype2/dropout" class="govuk-link govuk-link--no-visited-state">Do not report them again</a></td>
                   <td class="govuk-table__cell"> </td>
                   <td class="govuk-table__cell">New guidance/dropout page. Users understood the page but it did not deter them from submitting multiple reports.</td>
                   <td class="govuk-table__cell"> 
@@ -147,25 +146,151 @@
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype2/details" class="govuk-link govuk-link--no-visited-state">The person you want to report</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. First name is now mandatory. Manual address entry fields removed and replacted with address lookup pages. Form inputs updated to use GDS design system components.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/address-branch" class="govuk-link govuk-link--no-visited-state">Do you know their address?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">First page in the new address lookup pages. Branching question to skip users who do not know an address past this section.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/address-search" class="govuk-link govuk-link--no-visited-state">Find their address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">First step in the address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/address-select" class="govuk-link govuk-link--no-visited-state">Select an address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Second step in the address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/address-confirm" class="govuk-link govuk-link--no-visited-state">Confirm address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Third step in the address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">No address found</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO BE DONE</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/address-manual" class="govuk-link govuk-link--no-visited-state">What is their address?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Alternative manual address entry fields as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/how-it-works" target="_blank">DWP design system pattern</a>.</td>
                   <td class="govuk-table__cell"> </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell"><a href="/prototype2/fraud-type" class="govuk-link govuk-link--no-visited-state">What type of fraud do you want to report?</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell">Final 'None of the above' checkbox changed to 'Other type of fraud', previously this checkbox deseleted all the checkboxes above it, this was incorrect, it now works as a standard checkbox.</td>
                   <td class="govuk-table__cell"> </td>
                 </tr>
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell"><a href="/prototype2/working-and-claiming-benefits" class="govuk-link govuk-link--no-visited-state">The person you're reporting - their work</a></td>
+                  <td class="govuk-table__cell"><a href="/prototype2/working-and-claiming-benefits" class="govuk-link govuk-link--no-visited-state">Fraud type - The person you're reporting - their work</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Page lifted from existing FRC form based on selecting 'working and claiming benefits' on previous page checkboxes</td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form based on selecting 'working and claiming benefits' on previous page checkboxes. Form inputs updated to use GDS design system components.</td>
                   <td class="govuk-table__cell"> </td>
                 </tr>
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell"><a href="/prototype2/additional-information" class="govuk-link govuk-link--no-visited-state">Additional information</a></td>
+                  <td class="govuk-table__cell"><a href="/prototype2/living-with-partner-about-partner" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - about the partner</a></td>
                   <td class="govuk-table__cell"> </td>
-                  <td class="govuk-table__cell">Page lifted from existing FRC form</td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. Manual address entry fields removed and replacted with address lookup pages. Form inputs updated to use GDS design system components.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-address-branch" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - Does the partner regularly live at another address?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">First page in the new partner address lookup pages. Branching question to skip users who do not know the partner's address past this section.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-address-search" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - Find the partner's address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">First step in the partner address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-address-select" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - Select an address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Second step in the partner address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-address-confirm" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - Confirm address</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Third step in the partner address lookup flow as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - No address found</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO BE DONE</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-address-manual" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - What is the partner's address?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Alternative manual partner address entry fields as per the <a href="https://design-system.dwp.gov.uk/patterns/find-an-address/how-it-works" target="_blank">DWP design system pattern</a>.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/partner-working-branch" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - Is the partner working?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Previously this radio button question toggled visibility for an entire page of content underneath it on the same page. Now removed from that page to this single 'one thing per page' branching question. </td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/living-with-partner-work" class="govuk-link govuk-link--no-visited-state">Fraud type - Living with partner - the partner's work</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. Visibility toggle radios replaced with a branching question on the previous page. Form inputs updated to use GDS design system components.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/disability" class="govuk-link govuk-link--no-visited-state">Fraud type - Dishonestly claiming a disability benefit</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. Form inputs updated to use GDS design system components.</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/carers" class="govuk-link govuk-link--no-visited-state">Fraud type - Dishonestly claiming a carer's benefit</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO DO</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/not-in-uk" class="govuk-link govuk-link--no-visited-state">Fraud type - Claiming benefits but not living in the UK</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO DO</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/identity" class="govuk-link govuk-link--no-visited-state">Fraud type - Using a fraudulent identity</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO DO</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/savings" class="govuk-link govuk-link--no-visited-state">Fraud type - Not declaring savings or other non-work related income</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO DO</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/other" class="govuk-link govuk-link--no-visited-state">Fraud type - What do you want to report?</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">STILL TO DO</td>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="/prototype2/additional-information" class="govuk-link govuk-link--no-visited-state">Fraud type - Additional information</a></td>
+                  <td class="govuk-table__cell"> </td>
+                  <td class="govuk-table__cell">Page lifted from existing FRC form. Height of text area increased to reflect the high character count.</td>
                   <td class="govuk-table__cell"> </td>
                 </tr>
                 <tr class="govuk-table__row">

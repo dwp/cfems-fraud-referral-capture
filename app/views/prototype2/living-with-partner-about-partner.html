@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  The person you want to report – {{ serviceName }} – GOV.UK Prototype Kit
+  About the partner – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,17 +14,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="address-branch" method="post">
+        <form class="form" action="partner-address-branch" method="post">
 
-        <h1 class="govuk-heading-l">The person you want to report</h1>
+        <h1 class="govuk-heading-l">About the partner</h1>
 
           {{ govukInput({
           label: {
             text: "First name",
             classes: "govuk-label--m"
           },
-            id: "first-name",
-            name: "first-name"
+            id: "partner-first-name",
+            name: "partner-first-name"
           }) }}
 
 
@@ -33,8 +33,8 @@
             text: "Last name",
             classes: "govuk-label--m"
           },
-            id: "last-name",
-            name: "last-name"
+            id: "partner-last-name",
+            name: "partner-last-name"
           }) }}
 
 
@@ -42,8 +42,8 @@
           <!-- Nicknames -->
           {% set nicknameHtml %}
             {{ govukCharacterCount({
-              name: "nicknames",
-              id: "nicknames",
+              name: "partner-nick-name",
+              id: "partner-nick-name",
               maxlength: 250,
               label: {
                 text: "Other names"            }
@@ -83,8 +83,8 @@
           <!-- Date of Birth -->
           {% set dobHtml %}
             {{ govukDateInput({
-              id: "date-of-birth",
-              namePrefix: "date-of-birth",
+              id: "partner-date-of-birth",
+              namePrefix: "partner-date-of-birth",
               fieldset: {
                 legend: {
                   text: "Date of Birth"
@@ -101,9 +101,9 @@
               label: {
                 text: "Approximate age in years"
               },
-              id: "approximate-age",
+              id: "partner-approximate-age",
               classes: "govuk-input--width-4",
-              name: "approximate-age"
+              name: "partner-approximate-age"
             }) }}
           {% endset -%}
 
@@ -144,60 +144,16 @@
 
             {{ govukInput({
               label: {
-                text: " What is their National Insurance Number? (optional)",
+                text: "What is their National Insurance Number? (optional)",
                 classes: "govuk-label--m"
               },
               hint: {
               text: "For example, ‘QQ 12 34 56 C’"
               },
-              id: "national-insurance-number",
+              id: "partner-national-insurance-number",
               classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-              name: "national-insurance-number"
+              name: "partner-national-insurance-number"
             }) }}
-
-
-          <!-- Do you know radios 
-           
-          {% set ninoHtml %}
-            {{ govukInput({
-              label: {
-                text: "National Insurance number"
-              },
-              hint: {
-              text: "For example, ‘QQ 12 34 56 C’"
-              },
-              id: "national-insurance-number",
-              classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-              name: "national-insurance-number"
-            }) }}
-          {% endset -%}
-
-
-          {{ govukRadios({
-            classes: "govuk-radios",
-            name: "nino",
-            fieldset: {
-              legend: {
-                text: "Do you know their National Insurance number?",
-                classes: "govuk-fieldset__legend--m"  
-              }
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                conditional: {
-                  html: ninoHtml
-                }
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}. 
-           
-          -->
 
           <!-- End of NiNo -->
 
@@ -212,55 +168,12 @@
                 text: "What is their telephone number? (optional)",
                 classes: "govuk-label--m"
               },
-              id: "phone-number",
+              id: "partner-phone-number",
               classes: "govuk-input--width-20",
-              name: "phone-number",
+              name: "partner-phone-number",
               type: "tel",
               autocomplete: "tel"
             }) }}
-
-
-          <!-- Do you know radios   
-
-          {% set phoneHtml %}
-            {{ govukInput({
-              label: {
-                text: "Phone number"
-              },
-              id: "phone-number",
-              classes: "govuk-input--width-20",
-              name: "phone-number",
-              type: "tel",
-              autocomplete: "tel"
-            }) }}
-          {% endset -%}
-
-
-          {{ govukRadios({
-            classes: "govuk-radios",
-            name: "phone",
-            fieldset: {
-              legend: {
-                text: "Do you know their phone number?",
-                classes: "govuk-fieldset__legend--m"  
-              }
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                conditional: {
-                  html: phoneHtml
-                }
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
-
-          -->
 
           <!-- End of phone -->
 
@@ -276,57 +189,52 @@
                 text: "What is their email address? (optional)",
                 classes: "govuk-label--m"
               },
-              id: "email",
-              name: "email",
+              id: "partner-email",
+              name: "partner-email",
               type: "email",
               autocomplete: "email",
               spellcheck: false
             }) }}
 
-
-          <!-- Do you know radios   
-          {% set emailHtml %}
-            {{ govukInput({
-              label: {
-                text: "Email address"
-              },
-              id: "email",
-              name: "emailr",
-              type: "email",
-              autocomplete: "email",
-              spellcheck: false
-            }) }}
-          {% endset -%}
+          <!-- End of email -->
+           
 
 
           {{ govukRadios({
-            classes: "govuk-radios",
-            name: "email",
-            fieldset: {
-              legend: {
-                text: "Do you know their email address?",
-                classes: "govuk-fieldset__legend--m"  
-              }
+          name: "living-together-duration",
+          fieldset: {
+            legend: {
+              text: "Approximately how long have they been living with the person you're reporting?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Less than 3 months",
+              text: "Less than 3 months"
             },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes",
-                conditional: {
-                  html: emailHtml
-                }
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
-
-          -->
-
-          <!-- End of email -->
-
+            {
+              value: "3 to 6 months",
+              text: "3 to 6 months"
+            },
+            {
+              value: "More than 6 months but less than a year",
+              text: "More than 6 months but less than a year"
+            },
+            {
+              value: "More than a year",
+              text: "More than a year"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "I don't know",
+              text: "I don't know"
+            }
+          ]
+        }) }}
 
 
 

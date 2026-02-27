@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  There's no need to report them again – {{ serviceName }} – GOV.UK Prototype Kit
+  Do not report them again – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,23 +15,22 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        There's no need to report them again
+        Do not report them again
       </h1>
 
-      <p>It can take a long time to investigate reports of fraud.</p>
+      <p>We take all reports seriously. It can take as long as [9 months??] to investigate reports of fraud.</p>
 
-      <p>We take all reports seriously.</p>
+      <p>If you have reported someone before we will already be reviewing the information you provided.</p>
 
-      <div class="govuk-inset-text">
-        <p>Investigations are confidential so we cannot update you.</p>
-      </div>
+      {{ govukWarningText({
+        text: "If you report the same person again it will be automatically rejected.",
+        iconFallbackText: "Warning"
+      }) }}
 
-      <p>Sometimes we do not take any action because the person you've reported may:</p>
+         
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>have declared a change in their circumstances</li>
-        <li>be getting a benefit that's not affected by what you’re reporting</li>
-      </ul>
+
+
 
 
     </div>

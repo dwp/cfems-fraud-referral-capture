@@ -1,0 +1,548 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  About the partner - their work – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/language-toggle.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">About the partner - their work</h1>
+
+        <form class="form" action="additional-information" method="post">
+
+        <div class="govuk-form-group govuk-character-count"
+    
+        
+      
+    
+        
+      
+    
+    
+    
+   data-module="govuk-character-count" data-maxlength="100" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
+   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
+  >
+  <label class="govuk-label govuk-label--m" for="f-workType">
+    What type of work do you think they are doing?
+  </label>
+
+
+
+  <textarea class="govuk-textarea govuk-js-character-count" id="f-workType" name="workType" rows="5" aria-describedby="f-workType-info"
+    
+  ></textarea>
+
+  <div id="f-workType-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 100 characters
+  </div>
+
+</div>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--m" for="f-employerName">
+    Name of the business or employer they work for
+  </label>
+
+
+  <input
+    
+        
+      
+    
+        
+      
+    
+        
+      
+    
+        
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   class="govuk-input" id="f-employerName" name="employerName" type="text"
+    
+  >
+
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group govuk-character-count"
+    
+        
+      
+    
+        
+      
+    
+    
+    
+   data-module="govuk-character-count" data-maxlength="250" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
+   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
+  >
+  <label class="govuk-label govuk-label--m" for="f-employerAddress">
+    Address or location of the business or employer they work for
+  </label>
+
+
+
+  <textarea class="govuk-textarea govuk-js-character-count" id="f-employerAddress" name="employerAddress" rows="5" aria-describedby="f-employerAddress-info"
+    
+  ></textarea>
+
+  <div id="f-employerAddress-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 250 characters
+  </div>
+
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+
+{{ govukRadios({
+          name: "partner-work-duration",
+          fieldset: {
+            legend: {
+              text: "How long do you think they have been doing this?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Less than 3 months",
+              text: "Less than 3 months"
+            },
+            {
+              value: "3 to 6 months",
+              text: "3 to 6 months"
+            },
+            {
+              value: "More than 6 months but less than a year",
+              text: "More than 6 months but less than a year"
+            },
+            {
+              value: "More than a year",
+              text: "More than a year"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "I don't know",
+              text: "I don't know"
+            }
+          ]
+        }) }}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+{{ govukInput({
+          label: {
+            text: "What time do they usually leave for work? (optional)",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "For example, 9am or 2:30pm - enter 12pm for midday"
+          },
+          classes: "govuk-input--width-5",
+          id: "leave-for-work",
+          name: "leave-for-work"
+        }) }}
+
+
+
+{{ govukInput({
+          label: {
+            text: "What time do they usually come back from work? (optional)",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "For example, 9am or 2:30pm - enter 12pm for midday"
+          },
+          classes: "govuk-input--width-5",
+          id: "back-from-work",
+          name: "back-from-work"
+        }) }}
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--m" for="f-workDuration">
+    How many hours do you think they work per week? (optional)
+  </label>
+
+
+  <input
+    
+        
+      
+    
+        
+      
+    
+        
+      
+    
+        
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   class="govuk-input govuk-input--width-5" id="f-workDuration" name="workDuration" type="text"
+    
+  >
+
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+{% set vehicleHtml %}
+  {{ govukCharacterCount({
+    name: "withHint",
+    id: "with-hint",
+    maxlength: 250,
+    label: {
+      text: "Vehicle details"
+    },
+    hint: {
+      text: "Make and model, colour and registration number if known"
+    }
+  }) }}
+{% endset -%}
+
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "dob",
+  fieldset: {
+    legend: {
+      text: "Do they travel to work in a vehicle?",
+      classes: "govuk-fieldset__legend--m"      }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: vehicleHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      conditional: {
+        html: approxHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+    
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    
+      What do you think their work status is?
+    
+    </legend>
+    
+  
+    <div class="govuk-checkboxes"
+      
+          
+        
+      
+     id="f-workStatus-wrapper" data-module="govuk-checkboxes">
+      
+      
+        
+    
+    
+      
+      
+      
+      
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="f-workStatus" name="workStatus[]" type="checkbox" value="Working for somebody">
+        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus">
+          Working for somebody
+        </label>
+        
+      </div>
+      
+    
+  
+      
+        
+    
+    
+      
+      
+      
+      
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="f-workStatus-2" name="workStatus[]" type="checkbox" value="Working for themselves">
+        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus-2">
+          Working for themselves
+        </label>
+        
+      </div>
+      
+    
+  
+      
+        
+    
+    
+      
+      
+      
+      
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="f-workStatus-3" name="workStatus[]" type="checkbox" value="Cash in hand">
+        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus-3">
+          Cash in hand
+        </label>
+        
+      </div>
+      
+    
+  
+      
+      
+    </div>
+  
+  </fieldset>
+
+</div>
+
+
+
+
+
+
+</fieldset>
+
+
+
+  
+
+  
+      
+  
+    
+  
+
+    
+        
+      
+    
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+    </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

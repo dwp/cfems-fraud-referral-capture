@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  What is their address? – {{ serviceName }} – GOV.UK Prototype Kit
+  What is the partner's address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,10 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="fraud-type" method="post">
-
-      
 
       {% call govukFieldset({
         legend: {
-          text: "What is their address?",
+          text: "What is the partner's address?",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
@@ -78,8 +75,6 @@
         }) }}
 
       {% endcall %}
-
-      </form>
 
   </div>
 </div>

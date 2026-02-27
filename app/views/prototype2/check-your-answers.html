@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {% include "includes/back-link.html" %}
+  {% include "includes/language-toggle.html" %}
 {% endblock %}
 
 {% block content %}
@@ -18,64 +16,341 @@
       <h1 class="govuk-heading-l">
         Check your answers
       </h1>
+      
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What country are they claiming benefits in?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['country-check'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">  what country are they claiming benefits in?</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you reported them to us before?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['reported-before-check'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> have you reported them to us before?</span></a>
+            </dd>
+          </div>
+        </dl>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Question 1"
-            },
-            value: {
-              text: "Answer 1"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 2"
-            },
-            value: {
-              text: "Answer 2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 2"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+
+
+        <!-- Personal details -->
+        <h2 class="govuk-heading-m">The person you want to report</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['first-name'] }}  {{ data['last-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you know them by another name?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nickname'] == 'Yes' %}
+                  {{ data['nicknames'] }} 
+              {% else %}
+                {{ data['nickname'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do you know them by another name?</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you know their date of birth?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['dob'] == 'Yes' %}
+                  {{ data['date-of-birth-day'] + " " + data['date-of-birth-month'] | toMonth + " " + data['date-of-birth-year'] }}
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do you know their date of birth?</span></a>
+            </dd>
+          </div>
+          {% if data['dob'] == 'No' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Approximate age
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['approximate-age'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> approximate age</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if data['national-insurance-number'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is their National Insurance Number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['national-insurance-number'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is their National Insurance Number?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if data['phone-number'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is their telephone number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['phone-number'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is their telephone number?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if data['email'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is their email address? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is their email address? </span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you know their address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['address-known'] == 'Yes' %}
+                  72 Guild Street<br>London<br>SE23 6FH
+              {% else %}
+                {{ data['address-known'] }}  
+              {% endif %}
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do you know their address?</span></a>
+            </dd>
+          </div>
+        </dl>
+        <!-- End of personal details-->
+
+
+
+
+
+        <!-- Working and claiming benefit-->
+        {% if data['fraudtypes'] == 'working-claiming' %}
+        <h2 class="govuk-heading-m">Working and claiming benefit</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What type of work do you think they are doing? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-type-of-work'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what type of work do you think they are doing?</span></a>
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Name of the business or employer they work for 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-employer-business-name'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name of the business or employer they work for</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Address or location of the business or employer they work for 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-address-location-employer-business'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address or location of the business or employer they work for </span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Approximately how long have they been claiming benefits? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['benefits-duration'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> approximately how long have they been claiming benefits? </span></a>
+            </dd>
+          </div>
+
+          {% if data['leave-for-work'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time do they usually leave for work?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['leave-for-work'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually leave for work?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['back-from-work'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time do they usually come back from work? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['back-from-work'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually come back from work? </span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['hours-per-week'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many hours do you think they work per week?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hours-per-week'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how many hours do you think they work per week?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they travel to work in a vehicle?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['travel-in-vehicle'] == 'Yes' %}
+                  {{ data['vehicle-details'] }} 
+              {% else %}
+                {{ data['travel-in-vehicle'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do they travel to work in a vehicle?</span></a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you think their work status is?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['work-status'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what do you think their work status is?</span></a>
+            </dd>
+          </div>
+
+        </dl>
+        {% endif %}
+
+        <!-- End of working and claiming benefit -->
+        
+         
+
+
+        <!-- Living with partner -->
+        {% if data['fraudtypes'] == 'living-with-partner' %}
+        <h2 class="govuk-heading-m">Living with a partner while claiming to be living alone</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous application number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              502135326
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Licence type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              For personal use
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+        </dl>
+        {% endif %}
+
+        <!-- End of Living with partner -->
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Give any other information about what you think the person is doing?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              502135326
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> give any other information about what you think the person is doing?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+
 
       <h2 class="govuk-heading-m">
         Now send your report
@@ -85,10 +360,10 @@
         By submitting this report you are confirming that, to the best of your knowledge, the details you are providing are correct.
       </p>
 
-      <form action="/confirmation" method="post" novalidate>
+      <form action="confirmation" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Send your report"
         }) }}
 
       </form>
