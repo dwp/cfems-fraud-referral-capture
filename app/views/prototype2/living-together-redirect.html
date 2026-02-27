@@ -15,9 +15,13 @@
       
   
     
-{% if data['what-funding-check'] == 'living-with-partner' or 'working-claiming' %}
+{% if data['fraudtypes'] == 'living-with-partner' or 'working-claiming' %}
 <script>
     window.location.href = 'living-with-partner-about-partner'
+</script>
+{% else %}
+<script>
+    window.location.href = 'additional-information'
 </script>
 {% endif %}
 
