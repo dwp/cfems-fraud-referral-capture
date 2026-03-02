@@ -49,7 +49,7 @@ router.post('/prototype2/country', (req, res) => {
 // Prototype 2 - Reported them before check
 router.post('/prototype2/reported-before', (req, res) => {
         if(req.session.data['reported-before-check'] == 'Yes'){
-    res.redirect('new-information')
+    res.redirect('dropout')
         } else {
     res.redirect('details')
     }   

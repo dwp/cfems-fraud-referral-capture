@@ -18,15 +18,18 @@
         What happens next
       </h2>
 
-      <p>We'll look into your report.</p>
- 
-      <p>You only need to report them once unless you have new information.</p>
+      <p>We will review the information you have given us and decide whether any action should be taken. It can take a long time to do this.</p>
 
-      <p>Investigations can take a long time and are confidential.</p>
+      {{ govukWarningText({
+        text: "If you report the same person again it will be automatically rejected.",
+        iconFallbackText: "Warning"
+      }) }}
 
-      <div class="govuk-inset-text">
-        We cannot update you or tell you outcomes.
-      </div>
+      <h2 class="govuk-heading-m">
+        Responding to your report
+      </h2>
+
+      <p>Investigations are confidential and we cannot respond to your report, update you or tell you outcomes.</p>
 
       <p>We take all reports of benefit fraud seriously.</p>
 
@@ -34,7 +37,7 @@
 
       <ul class="govuk-list govuk-list--bullet">
         <li>they may have declared a change in their circumstances </li>
-        <li>their benefit may not be affected by what you’re reporting </li>
+        <li>their benefit may not be affected by what you have reported</li>
       </ul>
 
       
