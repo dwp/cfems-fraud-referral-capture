@@ -154,7 +154,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['address-known'] == 'Yes' %}
-                  72 Guild Street<br>London<br>SE23 6FH
+                  1 Washington Street<br>Worcester<br>WR1 1NL
               {% else %}
                 {{ data['address-known'] }}  
               {% endif %}
@@ -296,15 +296,12 @@
           </div>
 
         </dl>
-        {% endif %}
-
         <!-- End of working and claiming benefit -->
         
          
 
-
+        {% elseif data['fraudtypes'] == 'living-with-partner' %}
         <!-- Living with partner -->
-        {% if data['fraudtypes'] == 'living-with-partner' %}
         <h2 class="govuk-heading-m">Living with a partner while claiming to be living alone</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -425,7 +422,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-address-known'] == 'Yes' %}
-                  72 Guild Street<br>London<br>SE23 6FH
+                  24 Crompton Street, Worcester, WR1 1NL
               {% else %}
                 {{ data['partner-address-known'] }}  
               {% endif %}
@@ -463,13 +460,310 @@
           {% endif %}
 
         </dl>
+        <!-- End of Living with partner -->
 
 
 
 
+
+
+
+
+         <!-- Working and claiming & Living together -->
+        {% elseif data['fraudtypes'] == 'working-claiming' or 'living-with-partner'  %}
+
+        <h2 class="govuk-heading-m">Working and claiming benefit</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What type of work do you think they are doing? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-type-of-work'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what type of work do you think they are doing?</span></a>
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Name of the business or employer they work for 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-employer-business-name'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name of the business or employer they work for</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Address or location of the business or employer they work for 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['working-claming-address-location-employer-business'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address or location of the business or employer they work for </span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Approximately how long have they been claiming benefits? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['benefits-duration'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> approximately how long have they been claiming benefits? </span></a>
+            </dd>
+          </div>
+
+          {% if data['leave-for-work'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time do they usually leave for work?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['leave-for-work'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually leave for work?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['back-from-work'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time do they usually come back from work? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['back-from-work'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually come back from work? </span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['hours-per-week'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many hours do you think they work per week?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['hours-per-week'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how many hours do you think they work per week?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they travel to work in a vehicle?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['travel-in-vehicle'] == 'Yes' %}
+                  {{ data['vehicle-details'] }} 
+              {% else %}
+                {{ data['travel-in-vehicle'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do they travel to work in a vehicle?</span></a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you think their work status is?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['work-status'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what do you think their work status is?</span></a>
+            </dd>
+          </div>
+
+        </dl>
+        <!-- End of working and claiming benefit -->
+        
+        <!-- Living with partner -->
+        <h2 class="govuk-heading-m">Living with a partner while claiming to be living alone</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Partner's name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-first-name'] }} {{ data['partner-last-name'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you know the partner by another name?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-nickname-check'] == 'Yes' %}
+                  {{ data['partner-nick-name'] }} 
+              {% else %}
+                {{ data['partner-nickname-check'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do you know them by another name?</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you know the partner's date of birth?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-dob'] == 'Yes' %}
+                  {{ data['partner-date-of-birth-day'] + " " + data['partner-date-of-birth-month'] | toMonth + " " + data['partner-date-of-birth-year'] }}
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do you know their date of birth?</span></a>
+            </dd>
+          </div>
+          {% if data['partner-dob'] == 'No' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Partner's Approximate age
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-approximate-age'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> partner's approximate age</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['partner-national-insurance-number'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the partner's National Insurance Number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-national-insurance-number'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is the partner's National Insurance Number?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if data['partner-phone-number'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the partner's telephone number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-phone-number'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is the partner's telephone number?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if data['partner-email'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the partner's email address? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-email'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is the partner's email address? </span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Approximately how long have they been living with the person you're reporting?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['living-together-duration'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what is the partner's email address? </span></a>
+            </dd>
+          </div>
+
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does the partner regularly live at another address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-address-known'] == 'Yes' %}
+                  24 Crompton Street, Worcester, WR1 1NL
+              {% else %}
+                {{ data['partner-address-known'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> does the partner regularly live at another address? </span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is the partner working?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-working'] }}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> is the partner working?</span></a>
+            </dd>
+          </div>
+
+          <!-- If partner working is Yes show all about partners work answers -->
+          {% if data['partner-working'] == 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 What type of work do you think they are doing? 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-working'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what type of work do you think they are doing? </span></a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+        
+        <!-- End of Living with partner -->
+
+
+        
+        <!-- End of Working and claiming & Living together-->
         {% endif %}
 
-        <!-- End of Living with partner -->
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
