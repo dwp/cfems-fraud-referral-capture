@@ -19,7 +19,7 @@
       <form class="form" action="partner-address-confirm" method="post">
 
        {{ govukRadios({
-        name: "select-an-address",
+        name: "select-partner-address",
         classes: "govuk-radios--small",
         fieldset: {
           legend: {
@@ -30,56 +30,72 @@
         },
         formGroup: {
           beforeInputs: {
-            html: "<p class='govuk-body'>6 addresses found for <b>wr11nl</b> and <b>1</b>. <a href='partner-address-search' class='govuk-link'>Search again</a></p>"
+            html: "<p class='govuk-body'>8 addresses found for <b>WR2 8SX</b>. <a href='partner-address-search' class='govuk-link'>Search again</a></p>"
           }
         },
         items: [
           {
-            value: "1 Washington Street, Worcester, WR1 1NL",
-            text: "1 Washington Street, Worcester, WR1 1NL",
+            value: "24 Crompton Street, Worcester, WR2 8SX",
+            text: "24 Crompton Street, Worcester, WR2 8SX",
             attributes: {
               "data-ga-question": "Select an address",
               "data-ga-answer": "Answer 1"
             }
           },
           {
-            value: "10 Washington Street, Worcester, WR1 1NL",
-            text: "10 Washington Street, Worcester, WR1 1NL",
+            value: "26 Crompton Street, Worcester, WR2 8SX",
+            text: "26 Crompton Street, Worcester, WR2 8SX",
             attributes: {
               "data-ga-question": "Select an address",
               "data-ga-answer": "Answer 2"
             }
           },
           {
-            value: "11 Washington Street, Worcester, WR1 1NL",
-            text: "11 Washington Street, Worcester, WR1 1NL",
-            attributes: {
-              "data-ga-question": "Select an address",
-              "data-ga-answer": "Answer 2"
-            }
-          },
-          {
-            value: "101 Washington Street, Worcester, WR1 1NL",
-            text: "101 Washington Street, Worcester, WR1 1NL",
+            value: "28 Crompton Street, Worcester, WR2 8SX",
+            text: "28 Crompton Street, Worcester, WR2 8SX",
             attributes: {
               "data-ga-question": "Select an address",
               "data-ga-answer": "Answer 3"
             }
           },
           {
-            value: "110 Washington Street, Worcester, WR1 1NL",
-            text: "110 Washington Street, Worcester, WR1 1NL",
+            value: "30 Crompton Street, Worcester, WR2 8SX",
+            text: "30 Crompton Street, Worcester, WR2 8SX",
             attributes: {
               "data-ga-question": "Select an address",
               "data-ga-answer": "Answer 4"
             }
           },
           {
-            value: "111 Washington Street, Worcester, WR1 1NL",
-            text: "111 Washington Street, Worcester, WR1 1NL",
+            value: "32 Crompton Street, Worcester, WR2 8SX",
+            text: "32 Crompton Street, Worcester, WR2 8SX",
             attributes: {
               "data-ga-question": "Select an address",
               "data-ga-answer": "Answer 5"
+            }
+          },
+          {
+            value: "34 Crompton Street, Worcester, WR2 8SX",
+            text: "34 Crompton Street, Worcester, WR2 8SX",
+            attributes: {
+              "data-ga-question": "Select an address",
+              "data-ga-answer": "Answer 6"
+            }
+          },
+          {
+            value: "36 Crompton Street, Worcester, WR2 8SX",
+            text: "36 Crompton Street, Worcester, WR2 8SX",
+            attributes: {
+              "data-ga-question": "Select an address",
+              "data-ga-answer": "Answer 7"
+            }
+          },
+          {
+            value: "38 Crompton Street, Worcester, WR2 8SX",
+            text: "38 Crompton Street, Worcester, WR2 8SX",
+            attributes: {
+              "data-ga-question": "Select an address",
+              "data-ga-answer": "Answer 8"
             }
           }
         ]
