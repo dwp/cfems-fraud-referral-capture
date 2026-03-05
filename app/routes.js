@@ -75,7 +75,7 @@ router.post('/prototype2/address-known', (req, res) => {
 
 // Prototype 2 - Partner address branch
 router.post('/prototype2/partner-address-known', (req, res) => {
-        if(req.session.data['partner-address-known'] == 'Yes, I know the address'){
+        if(req.session.data['partner-address-known'] == 'Yes'){
     res.redirect('partner-address-search')
         } else {
     res.redirect('partner-working-branch')

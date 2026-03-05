@@ -421,7 +421,7 @@
               Does the partner regularly live at another address?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-address-known'] == 'Yes, I know the address' %}
+              {% if data['partner-address-known'] == 'Yes' %}
                   24 Crompton Street<br>Worcester<br>WR1 1NL
               {% else %}
                 {{ data['partner-address-known'] }}  
@@ -831,7 +831,7 @@
               Does the partner regularly live at another address?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-address-known'] == 'Yes, I know the address' %}
+              {% if data['partner-address-known'] == 'Yes' %}
                   24 Crompton Street<br>Worcester<br>WR1 1NL
               {% else %}
                 {{ data['partner-address-known'] }}  
