@@ -18,165 +18,41 @@
 
         <form class="form" action="additional-information" method="post">
 
-        <div class="govuk-form-group govuk-character-count"
-    
-        
-      
-    
-        
-      
-    
-    
-    
-   data-module="govuk-character-count" data-maxlength="100" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
-   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
-  >
-  <label class="govuk-label govuk-label--m" for="f-workType">
-    What type of work do you think they are doing?
-  </label>
+          {{ govukCharacterCount({
+            name: "partner-type-of-work",
+            id: "partner-type-of-work",
+            maxlength: 100,
+            label: {
+              text: "What type of work do you think they are doing?",
+              classes: "govuk-label--m"
+            }
+          }) }}
+
+           {{ govukInput({
+            label: {
+              text: "Name of the business or employer they work for",
+              classes: "govuk-label--m"
+            },
+            id: "partner-working-employer-business-name",
+            name: "partner-working-employer-business-name"
+          }) }}
 
 
-
-  <textarea class="govuk-textarea govuk-js-character-count" id="f-workType" name="workType" rows="5" aria-describedby="f-workType-info"
-    
-  ></textarea>
-
-  <div id="f-workType-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 100 characters
-  </div>
-
-</div>
-
-
-
+          {{ govukCharacterCount({
+            name: "partner-working-claming-address-location-employer-business",
+            id: "partner-working-claming-address-location-employer-business",
+            maxlength: 100,
+            label: {
+              text: " Address or location of the business or employer they work for",
+              classes: "govuk-label--m"
+            }
+          }) }}
 
   
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--m" for="f-employerName">
-    Name of the business or employer they work for
-  </label>
-
-
-  <input
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   class="govuk-input" id="f-employerName" name="employerName" type="text"
-    
-  >
-
-</div>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="govuk-form-group govuk-character-count"
-    
-        
-      
-    
-        
-      
-    
-    
-    
-   data-module="govuk-character-count" data-maxlength="250" data-i18n.characters-under-limit.other="You have %{count} characters remaining" data-i18n.characters-under-limit.one="You have %{count} character remaining"
-   data-i18n.characters-at-limit="You have 0 characters remaining" data-i18n.characters-over-limit.other="You have %{count} characters too many" data-i18n.characters-over-limit.one="You have %{count} character too many"
-  >
-  <label class="govuk-label govuk-label--m" for="f-employerAddress">
-    Address or location of the business or employer they work for
-  </label>
-
-
-
-  <textarea class="govuk-textarea govuk-js-character-count" id="f-employerAddress" name="employerAddress" rows="5" aria-describedby="f-employerAddress-info"
-    
-  ></textarea>
-
-  <div id="f-employerAddress-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 250 characters
-  </div>
-
-</div>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-
-
-
-{{ govukRadios({
+        {{ govukRadios({
           name: "partner-work-duration",
           fieldset: {
             legend: {
@@ -213,25 +89,6 @@
         }) }}
 
 
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
 
 {{ govukInput({
           label: {
@@ -242,8 +99,8 @@
             text: "For example, 9am or 2:30pm - enter 12pm for midday"
           },
           classes: "govuk-input--width-5",
-          id: "leave-for-work",
-          name: "leave-for-work"
+          id: "partner-leave-for-work",
+          name: "partner-leave-for-work"
         }) }}
 
 
@@ -257,278 +114,94 @@
             text: "For example, 9am or 2:30pm - enter 12pm for midday"
           },
           classes: "govuk-input--width-5",
-          id: "back-from-work",
-          name: "back-from-work"
+          id: "partner-back-from-work",
+          name: "partner-back-from-work"
         }) }}
 
   
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--m" for="f-workDuration">
-    How many hours do you think they work per week? (optional)
-  </label>
-
-
-  <input
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-        
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   class="govuk-input govuk-input--width-5" id="f-workDuration" name="workDuration" type="text"
-    
-  >
-
-</div>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-  
-
-
-{% set vehicleHtml %}
-  {{ govukCharacterCount({
-    name: "withHint",
-    id: "with-hint",
-    maxlength: 250,
-    label: {
-      text: "Vehicle details"
-    },
-    hint: {
-      text: "Make and model, colour and registration number if known"
-    }
-  }) }}
-{% endset -%}
-
-
-
-
-
-{{ govukRadios({
-  classes: "govuk-radios",
-  name: "dob",
-  fieldset: {
-    legend: {
-      text: "Do they travel to work in a vehicle?",
-      classes: "govuk-fieldset__legend--m"      }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes",
-      conditional: {
-        html: vehicleHtml
-      }
-    },
-    {
-      value: "No",
-      text: "No",
-      conditional: {
-        html: approxHtml
-      }
-    }
-  ]
-}) }}
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-  
-
-  
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-    
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-    
-      What do you think their work status is?
-    
-    </legend>
-    
-  
-    <div class="govuk-checkboxes"
-      
-          
-        
-      
-     id="f-workStatus-wrapper" data-module="govuk-checkboxes">
-      
-      
-        
-    
-    
-      
-      
-      
-      
-      
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="f-workStatus" name="workStatus[]" type="checkbox" value="Working for somebody">
-        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus">
-          Working for somebody
-        </label>
-        
-      </div>
-      
-    
-  
-      
-        
-    
-    
-      
-      
-      
-      
-      
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="f-workStatus-2" name="workStatus[]" type="checkbox" value="Working for themselves">
-        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus-2">
-          Working for themselves
-        </label>
-        
-      </div>
-      
-    
-  
-      
-        
-    
-    
-      
-      
-      
-      
-      
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="f-workStatus-3" name="workStatus[]" type="checkbox" value="Cash in hand">
-        <label class="govuk-label govuk-checkboxes__label" for="f-workStatus-3">
-          Cash in hand
-        </label>
-        
-      </div>
-      
-    
-  
-      
-      
-    </div>
-  
-  </fieldset>
-
-</div>
-
-
-
-
-
-
-</fieldset>
-
-
-
-  
-
-  
-      
-  
-    
-  
-
-    
+        {{ govukInput({
+          label: {
+            text: "How many hours do you think they work per week? (optional)",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-5",
+          id: "partner-hours-per-week",
+          name: "partner-hours-per-week"
+        }) }}
+
+
+
+
+        {% set vehicleHtml %}
+          {{ govukCharacterCount({
+            name: "partner-vehicle-details",
+            id: "partner-vehicle-details",
+            maxlength: 250,
+            label: {
+              text: "Vehicle details"
+            },
+            hint: {
+              text: "Make and model, colour and registration number if known"
+            }
+          }) }}
+        {% endset -%}
+
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "partner-vehicle-check",
+          fieldset: {
+            legend: {
+              text: "Do they travel to work in a vehicle?",
+              classes: "govuk-fieldset__legend--m"      }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: vehicleHtml
+              }
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+                html: approxHtml
+              }
+            }
+          ]
+        }) }}
+
+
+
+        {{ govukCheckboxes({
+          name: "partner-work-status",
+          fieldset: {
+            legend: {
+              text: "What do you think their work status is?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              value: "Working for somebody",
+              text: "Working for somebody"
+            },
+            {
+              value: "Working for themselves",
+              text: "Working for themselves"
+            },
+            {
+              value: "Cash in hand",
+              text: "Cash in hand"
+            }
+          ]
+        }) }}
         
       
     

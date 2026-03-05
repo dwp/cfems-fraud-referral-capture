@@ -421,8 +421,8 @@
               Does the partner regularly live at another address?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-address-known'] == 'Yes' %}
-                  24 Crompton Street, Worcester, WR1 1NL
+              {% if data['partner-address-known'] == 'Yes, I know the address' %}
+                  24 Crompton Street<br>Worcester<br>WR1 1NL
               {% else %}
                 {{ data['partner-address-known'] }}  
               {% endif %}
@@ -451,12 +451,126 @@
                  What type of work do you think they are doing? 
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['partner-working'] }}  
+                {{ data['partner-type-of-work'] }}  
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what type of work do you think they are doing? </span></a>
               </dd>
             </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Name of the business or employer they work for
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-working-employer-business-name'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name of the business or employer they work for</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Address or location of the business or employer they work for
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-working-claming-address-location-employer-business'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address or location of the business or employer they work for</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 How long do you think they have been doing this?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-work-duration'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how long do you think they have been doing this?</span></a>
+              </dd>
+            </div>
+
+           
+
+            {% if data['partner-leave-for-work'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 What time do they usually leave for work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-leave-for-work'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually leave for work?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            {% if data['partner-back-from-work'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 What time do they usually come back from work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-back-from-work'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually come back from work?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            {% if data['partner-hours-per-week'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 How many hours do you think they work per week?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-hours-per-week'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how many hours do you think they work per week?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they travel to work in a vehicle?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-vehicle-check'] == 'Yes' %}
+                  {{ data['partner-vehicle-details'] }} 
+              {% else %}
+                {{ data['partner-vehicle-check'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do they travel to work in a vehicle?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you think their work status is?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-work-status'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what do you think their work status is?</span></a>
+            </dd>
+          </div>
+          <!-- End of partner work details -->
+
+
+
           {% endif %}
 
         </dl>
@@ -717,8 +831,8 @@
               Does the partner regularly live at another address?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-address-known'] == 'Yes' %}
-                  24 Crompton Street, Worcester, WR1 1NL
+              {% if data['partner-address-known'] == 'Yes, I know the address' %}
+                  24 Crompton Street<br>Worcester<br>WR1 1NL
               {% else %}
                 {{ data['partner-address-known'] }}  
               {% endif %}
@@ -747,16 +861,127 @@
                  What type of work do you think they are doing? 
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['partner-working'] }}  
+                {{ data['partner-type-of-work'] }}  
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what type of work do you think they are doing? </span></a>
               </dd>
             </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Name of the business or employer they work for
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-working-employer-business-name'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name of the business or employer they work for</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Address or location of the business or employer they work for
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-working-claming-address-location-employer-business'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address or location of the business or employer they work for</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 How long do you think they have been doing this?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-work-duration'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how long do you think they have been doing this?</span></a>
+              </dd>
+            </div>
+
+           
+
+            {% if data['partner-leave-for-work'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 What time do they usually leave for work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-leave-for-work'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually leave for work?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            {% if data['partner-back-from-work'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 What time do they usually come back from work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-back-from-work'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what time do they usually come back from work?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            {% if data['partner-hours-per-week'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 How many hours do you think they work per week?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['partner-hours-per-week'] }}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how many hours do you think they work per week?</span></a>
+              </dd>
+            </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they travel to work in a vehicle?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-vehicle-check'] == 'Yes' %}
+                  {{ data['partner-vehicle-details'] }} 
+              {% else %}
+                {{ data['partner-vehicle-check'] }}  
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> do they travel to work in a vehicle?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you think their work status is?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['partner-work-status'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> what do you think their work status is?</span></a>
+            </dd>
+          </div>
+          <!-- End of partner work details -->
+
           {% endif %}
 
         </dl>
-        
         <!-- End of Living with partner -->
 
 
