@@ -81,7 +81,7 @@
               {% if data['dob'] == 'Yes' %}
                   {{ data['date-of-birth-day'] + " " + data['date-of-birth-month'] | toMonth + " " + data['date-of-birth-year'] }}
               {% else %}
-                No
+                {{ data['dob'] }}  
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -338,7 +338,7 @@
               {% if data['partner-dob'] == 'Yes' %}
                   {{ data['partner-date-of-birth-day'] + " " + data['partner-date-of-birth-month'] | toMonth + " " + data['partner-date-of-birth-year'] }}
               {% else %}
-                No
+                {{ data['partner-dob'] }}  
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
