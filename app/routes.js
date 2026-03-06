@@ -82,12 +82,12 @@ router.post('/prototype2/partner-address-known', (req, res) => {
     }   
 });
 
-// Prototype 2 - Partner address branch
+// Prototype 2 - Partner working branch
 router.post('/prototype2/partner-working', (req, res) => {
         if(req.session.data['partner-working'] == 'Yes'){
     res.redirect('living-with-partner-work')
         } else {
-    res.redirect('additional-information-living-with-partner')
+    res.redirect('additional-information')
     }   
 });
 
